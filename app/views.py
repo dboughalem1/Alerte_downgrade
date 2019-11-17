@@ -16,4 +16,27 @@ def accueil():
 @app.route("/Summary")
 @cache.cached(timeout=50)
 def sumup():
-    return render_template('sumup.html')
+    tot_down = 2453
+    tot_marge = 67524.24
+    avg_down_marge = int(tot_marge/tot_down)
+    return render_template('sumup.html',tot_down=tot_down, tot_marge = tot_marge, avg_down_marge=avg_down_marge)
+
+
+@app.route("/Downgrade/Clients")
+@cache.cached(timeout=50)
+def clients_downgrade():
+    data = pd.read_csv('app/MOUVEMENTS_201910.csv', sep=';', encoding='latin1')
+    data.set_index('NUM_CLIENT', inplace = True) 
+    extract = data.sort_values('downgrade_marge', ascending=1).head(5) 
+    extract = extract.iloc[:,:7]
+    return render_template('clients_down.html',tables=[extract.to_html(classes='downgrade')],
+    titles = ['na', 'Top 5 downgrades en marge'])
+
+@app.route("/jinja")
+@cache.cached(timeout=50)
+def jinja():
+    tot_down = 2453
+    tot_marge = 67524.24
+    avg_down_marge = int(tot_marge/tot_down)
+    print(avg_down_marge)
+    return render_template("jinja.html", tot_down=tot_down, tot_marge = tot_marge, avg_down_marge=avg_down_marge)

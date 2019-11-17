@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+<title>Accueil</title>
   <body>
+ <CENTER>
     <header>
       <div class="container">
         <h1 style='color: red;'>Outil Downgrade</h1>
-         <p>Bienvenue dans l'outil d'alertes downgrades de Canal!</p>
-          <code>Powered by <em>Polyconseil</em></code>
+        <p>Bienvenue dans l'outil d'alertes downgrades de Canal!</p>
+        <code style='color: grey;'><em> Powered By Polyconseil</em></code>
         <strong><nav>
-          <ul class="menu">
-            <li><a href="{{ url_for('accueil') }}">Ici,l'accueil!</a></li>
-            <li><a href="{{ url_for('sumup') }}">Summary alertes</a></li>
-          </ul>
-        </nav></strong>
-      </div>
+        <ul class="menu">
+        <a href="{{ url_for('sumup') }}" style= 'color: blue;'>Summary des alertes</a>
+        </ul>
+        </nav></strong> 
+     </div>
     </header>
-  </body>
+  <CENTER> 
+ </body>
 </html>
