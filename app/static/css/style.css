@@ -1,6 +1,8 @@
 
-body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-a, h1, h2       { color: orange; }
+body            { 
+background-color: #EEE2DC;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+a, h1, h2       { color: #5D001E; }
 h1, h2          { margin: 1; }
 h1              { border-bottom: 2px solid #eee; }
 h2              { font-size: 1em; }
@@ -16,7 +18,7 @@ table.dataframe, .dataframe th, .dataframe td {
 }
 
 .downgrade th {
-    background-color: grey;
+    background-color: #4E4E50;
     color: white;
 }
 

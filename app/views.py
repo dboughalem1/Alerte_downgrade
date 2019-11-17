@@ -32,6 +32,15 @@ def clients_downgrade():
     return render_template('clients_down.html',tables=[extract.to_html(classes='downgrade')],
     titles = ['na', 'Top 5 downgrades en marge'])
 
+#TEST AREAS#
+
+@app.route("/public")
+@cache.cached(timeout=50)
+def test():
+    return render_template('public.html')
+
+
+
 @app.route("/jinja")
 @cache.cached(timeout=50)
 def jinja():

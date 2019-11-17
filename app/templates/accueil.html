@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
-<title>Accueil</title>
+{% extends "./public_template.html" %}
+{% block title %}Acceuil{% endblock %}
+
+
+ {% block main %}
+
   <body>
+
  <CENTER>
-    <header>
+     <link rel="stylesheet" href= "{{ url_for('static', filename='css/theme.css') }}" >
       <div class="container">
-        <h1 style='color: red;'>Outil Downgrade</h1>
+        <h1 style='color: #AC3B61;'>Outil Downgrade</h1>
         <p>Bienvenue dans l'outil d'alertes downgrades de Canal!</p>
-        <code style='color: grey;'><em> Powered By Polyconseil</em></code>
         <strong><nav>
         <ul class="menu">
-        <a href="{{ url_for('sumup') }}" style= 'color: blue;'>Summary des alertes</a>
-        </ul>
-        </nav></strong> 
-     </div>
-    </header>
-  <CENTER> 
+        </ul> 
+       </nav></strong> 
+<img src="{{ url_for('static', filename='img/logo_canal.jpg') }}" alt="" width="20%" >     
+</div> 
+<CENTER> 
+
  </body>
+ <footer id="footer">
+<code style='color: #BAB2B5;'><em> Powered By Polyconseil</em></code>
+</footer>
+ {% endblock %}
 </html>
