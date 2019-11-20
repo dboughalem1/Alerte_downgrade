@@ -34,12 +34,6 @@ def clients_downgrade():
 
 #TEST AREAS#
 
-@app.route("/public")
-@cache.cached(timeout=50)
-def test():
-    return render_template('public.html')
-
-
 
 @app.route("/jinja")
 @cache.cached(timeout=50)
