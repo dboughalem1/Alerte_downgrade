@@ -13,13 +13,13 @@ def accueil():
     return render_template('accueil.html')
 
 
-@app.route("/Summary")
+@app.route("/Volume/Summary")
 @cache.cached(timeout=50)
-def sumup():
+def volume_sumup():
     tot_down = 2453
     tot_marge = 67524.24
     avg_down_marge = int(tot_marge/tot_down)
-    return render_template('sumup.html',tot_down=tot_down, tot_marge = tot_marge, avg_down_marge=avg_down_marge)
+    return render_template('volume_summary.html',tot_down=tot_down, tot_marge = tot_marge, avg_down_marge=avg_down_marge)
 
 
 @app.route("/Downgrade/Clients")

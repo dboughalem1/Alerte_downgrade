@@ -1,17 +1,21 @@
 <!doctype html>
 
 <html>
-<title>Downgrade Marge</title>
+{% extends "./public_template.html" %}
+{% block title %}Acceuil{% endblock %}
+
+
+ {% block main %}
+
+  <body>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 <div class=page>
-<ul class="menu">
-<a href="{{ url_for('accueil') }}" style= 'color: grey;'>Retour à l'acceuil</a>
-</ul>
-  <h1>Alerte Marge</h1>
-  {% for table in tables %}
+ {% for table in tables %}
     <h2>{{titles[loop.index]}}</h2>
     {{ table|safe }}
   {% endfor %}
 </div>
 
+</body>
+ {% endblock %}
 </html>
